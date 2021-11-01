@@ -40,6 +40,8 @@ aws iam create-role \
   --role-name lambda-dynamodb-role \
   --assume-role-policy-document "${POLICY}"
 
+※ DynamoDBへのアクセス権限はCLIだとエラーになるぽいので後ほどコンソール画面から付与する
+
 # 実行結果を CloudWatch Log として保存させる
 aws iam attach-role-policy \
   --role-name lambda-dynamodb-role \
@@ -63,14 +65,14 @@ aws lambda create-function \
 aws lambda invoke \
   --function-name lambda-dynamodb-write-function \
   --log-type Tail \
-  --payload '{"email":"ise@gmail.com", "first_name":"太郎", "last_name":"伊勢", "age":40}' \
+  --payload '{"email":"taro@test.com", "first_name":"太郎", "last_name":"テスト", "age":40}' \
   outputfile.txt
 
   
 aws lambda invoke \
   --function-name lambda-dynamodb-read-function \
   --log-type Tail \
-  --payload '{"email":"ise@gmail.com"}' \
+  --payload '{"email":"taro@test.com"}' \
   outputfile.txt
 ```
 
