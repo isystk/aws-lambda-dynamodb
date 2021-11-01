@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+
+  awscli:
+    image: isystk/awscli
+    container_name: isystk-awscli
+    build:
+      context: "."
+      dockerfile: "Dockerfile"
+    tty: true
+    environment:
+      AWS_DEFAULT_REGION: ap-northeast-1
+      AWS_DEFAULT_OUTPUT: json
+      AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+      AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+    volumes:
+      - .:/aws
+    working_dir: /aws
+
