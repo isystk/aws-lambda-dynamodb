@@ -16,6 +16,7 @@ const dist = process.env['CIRCLE_ARTIFACTS'] || 'dist';
 const tmp = os.tmpdir();
 const tmpdir = path.join(tmp, 'aws-lamda-dynamodb-' + buildTag);
 
+console.log();
 // copy
 gulp.task('copy', () => {
   let src = [

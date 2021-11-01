@@ -45,20 +45,16 @@ aws iam attach-role-policy \
   --role-name lambda-dynamodb-role \
   --policy-arn arn:aws:iam::aws:policy/CloudWatchLogsFullAccess
 
-# デプロイパッケージを作成します。
-zip dist/read-a1f33fa0-3af3-11ec-a45c-a3a513741035.zip ./function/read.js
-zip dist/write-a1f33fa0-3af3-11ec-a45c-a3a513741035.zip ./function/read.js
-
 # Lambda関数を作成する
 aws lambda create-function \
   --function-name lambda-dynamodb-read-function \
-  --zip-file fileb://dist/read-a1f33fa0-3af3-11ec-a45c-a3a513741035.zip \
+  --zip-file fileb://dist/read-fde29740-3b0a-11ec-856f-514ae6ed300d.zip \
   --handler index.handler \
   --runtime nodejs14.x \
   --role "arn:aws:iam::004796740041:role/lambda-dynamodb-role"
 aws lambda create-function \
   --function-name lambda-dynamodb-write-function \
-  --zip-file fileb://dist/write-a1f33fa0-3af3-11ec-a45c-a3a513741035.zip \
+  --zip-file fileb://dist/write-fde29740-3b0a-11ec-856f-514ae6ed300d.zip \
   --handler index.handler \
   --runtime nodejs14.x \
   --role "arn:aws:iam::004796740041:role/lambda-dynamodb-role"
@@ -69,6 +65,8 @@ aws lambda invoke \
   --log-type Tail \
   --payload '{"email":"ise@gmail.com", "first_name":"太郎", "last_name":"伊勢", "age":40}' \
   outputfile.txt
+
+  
 aws lambda invoke \
   --function-name lambda-dynamodb-read-function \
   --log-type Tail \

@@ -1,0 +1,11 @@
+{
+  "name": "aws-lambda-dynamodb-read",
+  "version": "1.0.0",
+  "description": "aws-lambda-dynamodb-read",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "dynamodb-doc": "^1.0.0"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "aws-lambda-dynamodb-write",
+  "version": "1.0.0",
+  "description": "aws-lambda-dynamodb-write",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "dynamodb-doc": "^1.0.0"
+  }
+}
