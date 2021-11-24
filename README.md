@@ -1,8 +1,9 @@
-aws-lambda-dynamodb
+aws-lambda-gulp
 
 ## 🌐概要
 
 AWS Lambda から、DynamoDB に書き込みをするサンプルです。
+GulpでZIPしてデプロイしてます。
 
 
 ## 💬使い方
@@ -79,7 +80,7 @@ aws lambda invoke \
 
 ## 🎫 Licence
 
-[MIT](https://github.com/isystk/aws-lambda-dynamodb/blob/master/LICENSE)
+[MIT](https://github.com/isystk/aws-lambda-gulp/blob/master/LICENSE)
 
 ## 👀 Author
 
